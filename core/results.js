@@ -69,6 +69,11 @@ function proceedResult(result) {
 		}
 		progressed = true;
 	}
+	if ('story' in result) {
+		current_state['story'] = result['story'];
+		setStory(current_state);
+		progressed = true;
+	}
 	if ('game_over' in result) {
 		game_over(result['game_over']);
 		progressed = true;
